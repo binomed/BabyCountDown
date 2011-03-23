@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">Baby Count Down</string>
+<string name="conception_date">Conception Date</string>
+<string name="btn_valid">OK</string>
+<string name="btn_cancel">Cancel</string>
+<string name="month">Months</string>
+<string name="week">Weeks</string>
+<string name="day">Days</string>
+<string name="countDown">Countdown :</string>
+<string name="textColor">Text Color</string>
+<string name="textSpinnerColor">Choose a Color</string><string name="textTerm">Choice duration</string>
+<string name="textSpinnerTerm">Choose a duration</string><string name="or">or</string>
+
+
+</resources>

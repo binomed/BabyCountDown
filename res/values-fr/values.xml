@@ -1,0 +1,19 @@
+<resources>
+	<string-array name="colors">
+		<item>noir</item>
+		<item>bleu</item>
+		<item>cyan</item>
+		<item>gris foncé</item>
+		<item>gris</item>
+		<item>vert</item>
+		<item>gris clair</item>
+		<item>magenta</item>
+		<item>rouge</item>
+		<item>blanc</item>
+		<item>jaune</item>
+	</string-array>
+	<string-array name="terms">
+		<item>38 semaines</item>
+		<item>9 mois</item>
+	</string-array>
+</resources>
