@@ -4,13 +4,14 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/back"
     >
     <LinearLayout 
     	android:orientation="horizontal"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:layout_gravity="center_horizontal"
-		android:layout_marginLeft="3dip" 
+		android:layout_marginLeft="0dip" 
     	>
 		<TextView
 			android:id="@+id/nbMonth"  
@@ -22,7 +23,7 @@
 			android:id="@+id/txtNbMonth"  
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content"
-		    android:layout_marginLeft="3dip" 
+		    android:layout_marginLeft="2dip" 
 		    android:text="@string/month"
     		style="@style/Widget.text"
 		    />
@@ -30,7 +31,7 @@
 			android:id="@+id/txtOr"  
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
-		    android:layout_marginLeft="3dip" 
+		    android:layout_marginLeft="2dip" 
 		    android:text="@string/or"
     		style="@style/Widget.text"
 		    />
@@ -40,7 +41,7 @@
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:layout_gravity="center_horizontal"
-		android:layout_marginLeft="3dip" 
+		android:layout_marginLeft="0dip" 
     	>
 		<TextView
 			android:id="@+id/nbWeek"  
@@ -52,7 +53,7 @@
 			android:id="@+id/txtNbWeek"  
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
-		    android:layout_marginLeft="3dip" 
+		    android:layout_marginLeft="2dip" 
 		    android:text="@string/week"
     		style="@style/Widget.text"
 		    />
@@ -64,14 +65,14 @@
 		android:text="@string/countDown"
    		style="@style/Widget.text"
     	android:layout_gravity="center_horizontal"
-		android:layout_marginLeft="3dip" 
+		android:layout_marginLeft="0dip" 
 	    />
     <LinearLayout 
     	android:orientation="horizontal"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:layout_gravity="center_horizontal"
-		android:layout_marginLeft="3dip" 
+		android:layout_marginLeft="0dip" 
     	>
 		<TextView
 			android:id="@+id/nbDay"  
@@ -83,7 +84,7 @@
 			android:id="@+id/txtNbDay"  
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
-		    android:layout_marginLeft="3dip" 
+		    android:layout_marginLeft="2dip" 
 		    android:text="@string/day"
     		style="@style/Widget.Day"
 		    />

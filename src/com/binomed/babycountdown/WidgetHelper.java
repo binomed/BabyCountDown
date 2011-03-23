@@ -45,12 +45,9 @@ public class WidgetHelper {
 
 		Calendar calendarStart = Calendar.getInstance();
 		calendarStart.setTimeInMillis(time);
-		Calendar calendar31Dec = Calendar.getInstance();
-		calendar31Dec.setTimeInMillis(time);
 		Calendar calendarEnd = Calendar.getInstance();
 		calendarEnd.setTimeInMillis(time);
 		Calendar today = Calendar.getInstance();
-		int dayToday, dayStart, dayEnd, monthToday, monthStart, monthDiff, yearToday, yearEnd, yearStart;
 
 		switch (term) {
 		case 0:
@@ -63,44 +60,23 @@ public class WidgetHelper {
 			break;
 		}
 
-		calendar31Dec.set(today.get(Calendar.YEAR), Calendar.DECEMBER, 31);
-
-		dayStart = calendarStart.get(Calendar.DAY_OF_YEAR);
-		dayEnd = calendarEnd.get(Calendar.DAY_OF_YEAR);
-		dayToday = today.get(Calendar.DAY_OF_YEAR);
-		yearStart = calendarStart.get(Calendar.YEAR);
-		yearEnd = calendarEnd.get(Calendar.YEAR);
-		yearToday = today.get(Calendar.YEAR);
-		monthStart = calendarStart.get(Calendar.MONTH);
-		monthToday = today.get(Calendar.MONTH);
+		long diffFromStart, diffFromToday;
 		int monthToShow = 0;
 		int weekToShow = 0;
 		int dayToShow = 0;
 		if (today.getTimeInMillis() < calendarEnd.getTimeInMillis() && today.getTimeInMillis() > calendarStart.getTimeInMillis()) {
-			if (yearEnd > yearToday) {
-				dayEnd += calendar31Dec.get(Calendar.DAY_OF_YEAR);
-			} else if (yearToday > yearStart) {
-				dayEnd += calendar31Dec.get(Calendar.DAY_OF_YEAR);
-				dayToday += calendar31Dec.get(Calendar.DAY_OF_YEAR);
-				monthToday += calendar31Dec.get(Calendar.MONTH);
-			}
-			// if (dayEnd < dayToday) {
-			// dayEnd = calendar31Dec.get(Calendar.DAY_OF_YEAR) + dayEnd;
-			// }
-			// if (dayStart > dayToday) {
-			// dayToday = calendar31Dec.get(Calendar.DAY_OF_YEAR) + dayToday;
-			// }
-			// if (monthStart > monthToday) {
-			// monthToday = calendar31Dec.get(Calendar.MONTH) + monthToday;
-			// }
-			monthDiff = monthToday - monthStart;
-			// if (today.get(Calendar.DAY_OF_MONTH) < calendarStart.get(Calendar.DAY_OF_MONTH)) {
-			// monthDiff--;
-			// }
 
-			monthToShow = monthDiff;
-			weekToShow = Double.valueOf((dayToday - dayStart) / 7).intValue();
-			dayToShow = dayEnd - dayToday;
+			diffFromToday = calendarEnd.getTimeInMillis() - today.getTimeInMillis();
+			diffFromStart = today.getTimeInMillis() - calendarStart.getTimeInMillis();
+
+			Calendar dateFromToday = Calendar.getInstance();
+			Calendar dateFromStart = Calendar.getInstance();
+			dateFromToday.setTimeInMillis(diffFromToday);
+			dateFromStart.setTimeInMillis(diffFromStart);
+
+			monthToShow = dateFromStart.get(Calendar.MONTH);
+			weekToShow = dateFromStart.get(Calendar.WEEK_OF_YEAR);
+			dayToShow = dateFromToday.get(Calendar.DAY_OF_YEAR);
 		}
 		RemoteViews updateViews = null;
 		updateViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
